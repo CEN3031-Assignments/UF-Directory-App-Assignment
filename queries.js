@@ -39,7 +39,15 @@ var updatePhelpsMemorial = function() {
     Phelps Memorial Hospital Center's address is incorrect. Find the listing, update it, and then 
     log the updated document to the console. 
    */
-   Listing.update({'address':'701 N Broadway, Sleepy Hollow, NY 10591, United States'},{$set:{'address':'100 Phelps Lab P.O. Box 116350, Gainesville, FL  32611'}}, function(err, list){
+  var date = new Date();    
+  Listing.update({'address':'701 N Broadway, Sleepy Hollow, NY 10591, United States'},{$set:{'address':'100 Phelps Lab P.O. Box 116350, Gainesville, FL  32611'}}, function(err, list){
+    if (err){
+      throw err;
+    }
+    console.log(list);
+  });
+
+  Listing.update({'code':'PHL'},{$set:{'updated_at': date}}, function(err, list){
     if (err){
       throw err;
     }
