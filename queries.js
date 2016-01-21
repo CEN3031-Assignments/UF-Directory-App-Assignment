@@ -31,7 +31,6 @@ var removeCable = function() {
     if (err){
       throw err;
     }
-    console.log(list);
   });
 
 };
