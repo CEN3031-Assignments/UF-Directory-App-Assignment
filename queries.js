@@ -44,14 +44,12 @@ var updatePhelpsMemorial = function() {
     if (err){
       throw err;
     }
-    console.log(list);
   });
 
   Listing.update({'code':'PHL'},{$set:{'updated_at': date}}, function(err, list){
     if (err){
       throw err;
     }
-    console.log(list);
   });
 
   Listing.findOne({'code' : 'PHL'}, function(err,list){
